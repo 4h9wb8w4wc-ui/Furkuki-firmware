@@ -1,0 +1,49 @@
+name: "Build Unleashed Firmware"
+
+on:
+  push:
+    branches: [ "dev", "master", "main" ]
+    tags: [ "*" ]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target: [f7]
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          submodules: recursive
+
+      - name: "Set Build Environment"
+        run: |
+          echo "FBT_BUILD_TYPE=DEBUG=0 COMPACT=1" >> $GITHUB_ENV
+          echo "TARGET_HW=$(echo "${{ matrix.target }}" | sed 's/f//')" >> $GITHUB_ENV
+
+      - name: "Build Firmware and Apps"
+        run: |
+          ./fbt TARGET_HW=${{ env.TARGET_HW }} ${{ env.FBT_BUILD_TYPE }} updater_package fap_dist
+
+      - name: "Prepare Artifacts"
+        run: |
+          mkdir -p artifacts
+          # Копируем пакет обновления (.tgz), SDK (.zip) и образ для восстановления (.dfu)
+          cp dist/${{ matrix.target }}-*/flipper-z-${{ matrix.target }}-update-*.tgz artifacts/ || true
+          cp dist/${{ matrix.target }}-*/flipper-z-${{ matrix.target }}-sdk-*.zip artifacts/ || true
+          cp dist/${{ matrix.target }}-*/flipper-z-${{ matrix.target }}-full-*.dfu artifacts/ || true
+
+      - name: "Upload Artifacts to GitHub"
+        uses: actions/upload-artifact@v4
+        with:
+          name: Unleashed-Build-${{ matrix.target }}-${{ github.sha }}
+          path: artifacts/
+          if-no-files-found: error
