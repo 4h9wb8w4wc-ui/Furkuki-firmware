@@ -17,7 +17,7 @@ class GitVersion:
     def get_version_info(self):
         commit = (
             self._exec_git(f"rev-parse --short={self.REVISION_SUFFIX_LENGTH} HEAD")
-            or "unknown"
+            or "unlsh 2.0"
         )
 
         dirty = False
