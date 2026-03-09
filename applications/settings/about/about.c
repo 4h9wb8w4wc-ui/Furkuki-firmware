@@ -154,7 +154,7 @@ static DialogMessageButton fw_version_screen(DialogsApp* dialogs, DialogMessage*
     DialogMessageButton result;
     FuriString* buffer;
     buffer = furi_string_alloc();
-    const Version* ver = furi_hal_version_get_firmware_version();
+    const Version* ver = furi_hal_version_get_firmware_version(Furkuki);
     const BleGlueC2Info* c2_ver = NULL;
     //#ifdef SRV_BT
     c2_ver = ble_glue_get_c2_info();
