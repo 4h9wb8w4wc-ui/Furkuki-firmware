@@ -75,7 +75,7 @@ static DialogMessageButton compliance_screen(DialogsApp* dialogs, DialogMessage*
 static DialogMessageButton unleashed_info_screen(DialogsApp* dialogs, DialogMessage* message) {
     DialogMessageButton result;
 
-    const char* screen_header = "Unleashed 2.0 Firmware\n";
+    const char* screen_header = "Furkuki Firmware\n";
 
     const char* screen_text = "Is for experimental purposes\nonly "
                               "and is not meant for any\nillegal use! "
@@ -109,7 +109,7 @@ static DialogMessageButton unleashed_info_screen3(DialogsApp* dialogs, DialogMes
 
     const char* screen_text = "Community apps included in\nall builds except `c` build\n"
                               "For updates and more visit:\n"
-                              "github.com/DarkFlippers";
+                              "github.com/Furkuki-firmware";
 
     dialog_message_set_text(message, screen_text, 0, 0, AlignLeft, AlignTop);
     result = dialog_message_show(dialogs, message);
@@ -132,7 +132,7 @@ static DialogMessageButton hw_version_screen(DialogsApp* dialogs, DialogMessage*
         furi_hal_version_get_hw_body(),
         furi_hal_version_get_hw_connect(),
         furi_hal_version_get_hw_region_name_otp(),
-        my_name ? my_name : "Unknown");
+        my_name ? my_name : "furkuki");
 
     furi_string_cat_printf(buffer, "Serial Number:\n");
     const uint8_t* uid = furi_hal_version_uid();
