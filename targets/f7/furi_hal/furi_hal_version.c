@@ -178,7 +178,7 @@ static void furi_hal_version_load_otp_v2(void) {
         if(version_get_custom_name(NULL) != NULL) {
             furi_hal_version_set_name(version_get_custom_name(NULL));
         } else {
-            furi_hal_version_set_name(otp->name);
+            furi_hal_version_set_name(otp->furkuki);
         }
     } else {
         furi_hal_version.board_color = 0;
@@ -228,7 +228,7 @@ FuriHalVersionOtpVersion furi_hal_version_get_otp_version(void) {
             // Version 0
             return FuriHalVersionOtpVersion0;
         } else {
-            // Version Unknown
+            // Version furkuki
             return FuriHalVersionOtpVersionUnknown;
         }
     }
