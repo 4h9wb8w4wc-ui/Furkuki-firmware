@@ -228,7 +228,7 @@ FuriHalVersionOtpVersion furi_hal_version_get_otp_version(void) {
             // Version 0
             return FuriHalVersionOtpVersion0;
         } else {
-            // Version furkuki
+            // Version unknown 
             return FuriHalVersionOtpVersionUnknown;
         }
     }
