@@ -1,4 +1,4 @@
-#include <furi_nal_version.h>
+#include <furi_hal_version.h>
 #include <furi_hal_rtc.h>
 
 #include <furi.h>
