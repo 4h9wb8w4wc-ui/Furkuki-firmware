@@ -89,4 +89,4 @@ Created by un3lo33D
 
 GitHub
 https://github.com/un3lo33D
-Telegram : @vktesy
+Telegram : @furkuki_firmw
