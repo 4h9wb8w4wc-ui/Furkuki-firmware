@@ -102,7 +102,19 @@ static DialogMessageButton unleashed_info_screen2(DialogsApp* dialogs, DialogMes
     dialog_message_set_text(message, NULL, 0, 0, AlignLeft, AlignTop);
 
     return result;
+}
 
+static DialogMessageButton unleashed_info_screen3(DialogsApp* dialogs, DialogMessage* message) {
+    DialogMessageButton result;
+
+    const char* screen_text = "Telegram @furkuki_firmw.\n"
+                              "github.com/Furkuki-firmware";
+
+    dialog_message_set_text(message, screen_text, 0, 0, AlignLeft, AlignTop);
+    result = dialog_message_show(dialogs, message);
+    dialog_message_set_text(message, NULL, 0, 0, AlignLeft, AlignTop);
+
+    return result;
 }
 
 static DialogMessageButton hw_version_screen(DialogsApp* dialogs, DialogMessage* message) {
