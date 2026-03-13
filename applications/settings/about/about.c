@@ -77,7 +77,7 @@ static DialogMessageButton unleashed_info_screen(DialogsApp* dialogs, DialogMess
 
     const char* screen_header = "Furkuki Firmware\n";
 
-    const char* screen_text = "Is for experimental purposes\nonly "
+    const char* screen_text = "use the firmware legally\nonly "
                               "and is not meant for any\nillegal use! "
                               "We do not condone\nany illegal activity.";
 
@@ -102,20 +102,7 @@ static DialogMessageButton unleashed_info_screen2(DialogsApp* dialogs, DialogMes
     dialog_message_set_text(message, NULL, 0, 0, AlignLeft, AlignTop);
 
     return result;
-}
 
-static DialogMessageButton unleashed_info_screen3(DialogsApp* dialogs, DialogMessage* message) {
-    DialogMessageButton result;
-
-    const char* screen_text = "Community apps included in\nall builds except `c` build\n"
-                              "For updates and more visit:\n"
-                              "github.com/Furkuki-firmware";
-
-    dialog_message_set_text(message, screen_text, 0, 0, AlignLeft, AlignTop);
-    result = dialog_message_show(dialogs, message);
-    dialog_message_set_text(message, NULL, 0, 0, AlignLeft, AlignTop);
-
-    return result;
 }
 
 static DialogMessageButton hw_version_screen(DialogsApp* dialogs, DialogMessage* message) {
