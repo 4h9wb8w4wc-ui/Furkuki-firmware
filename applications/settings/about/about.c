@@ -107,7 +107,7 @@ static DialogMessageButton unleashed_info_screen2(DialogsApp* dialogs, DialogMes
 static DialogMessageButton unleashed_info_screen3(DialogsApp* dialogs, DialogMessage* message) {
     DialogMessageButton result;
 
-    const char* screen_text = "Telegram @furkuki_firmw.\n"
+    const char* screen_text = "Telegram : furkuki_firmw.\n"
                               "github.com/Furkuki-firmware";
 
     dialog_message_set_text(message, screen_text, 0, 0, AlignLeft, AlignTop);
