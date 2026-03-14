@@ -95,7 +95,7 @@ static DialogMessageButton unleashed_info_screen2(DialogsApp* dialogs, DialogMes
 
     const char* screen_text =
         "This firmware is free and\ndistributed under\nthe OpenSource license.\n"
-        "If you paid any money for it\n- you got scammed.";
+        "There will be a privaete\n- version,but later.";
 
     dialog_message_set_text(message, screen_text, 0, 0, AlignLeft, AlignTop);
     result = dialog_message_show(dialogs, message);
