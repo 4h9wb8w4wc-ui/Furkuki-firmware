@@ -79,7 +79,7 @@ static DialogMessageButton unleashed_info_screen(DialogsApp* dialogs, DialogMess
 
     const char* screen_text = "use the firmware legally\nonly "
                               "and is not meant for any\nillegal use! "
-                              "We do not condone\nany illegal activity.";
+                              "Enjoy the firmware.";
 
     dialog_message_set_header(message, screen_header, 0, 0, AlignLeft, AlignTop);
     dialog_message_set_text(message, screen_text, 0, 11, AlignLeft, AlignTop);
@@ -108,6 +108,7 @@ static DialogMessageButton unleashed_info_screen3(DialogsApp* dialogs, DialogMes
     DialogMessageButton result;
 
     const char* screen_text = "Telegram : furkuki_firmw.\n"
+                              "Discord.gg/8cm5uAfvr.\n"
                               "github.com/Furkuki-firmware";
 
     dialog_message_set_text(message, screen_text, 0, 0, AlignLeft, AlignTop);
