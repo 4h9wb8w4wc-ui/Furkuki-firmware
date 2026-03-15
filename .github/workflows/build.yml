@@ -36,7 +36,6 @@ jobs:
       - name: "Prepare Artifacts"
         run: |
           mkdir -p artifacts
-          # Копируем пакет обновления (.tgz), SDK (.zip) и образ для восстановления (.dfu)
           cp dist/${{ matrix.target }}-*/flipper-z-${{ matrix.target }}-update-*.tgz artifacts/ || true
           cp dist/${{ matrix.target }}-*/flipper-z-${{ matrix.target }}-sdk-*.zip artifacts/ || true
           cp dist/${{ matrix.target }}-*/flipper-z-${{ matrix.target }}-full-*.dfu artifacts/ || true
